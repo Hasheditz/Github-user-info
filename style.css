@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background:whitesmoke;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form{
+    padding: 1rem;
+    margin: 1rem;
+}
+form input{
+    padding: 0.5rem;
+    min-width: 25rem;
+    font-size: 1.2rem;
+    outline: none;
+    border: 1px solid #777;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem #ccc;
+}
+main{
+    border: 1px solid;
+    max-width: 50rem;
+    display: flex;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+main .card{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .card img{
+    width: 40%;
+    display: block;
+    user-select: none;
+    border-radius: 50%;
+}
+main .user-info .info {
+    display: flex;
+    flex-direction: row;
+
+}
+main .user-info .info p{
+    margin: 1rem;
+}
+main .user-info .info .repos {
+    margin: 1rem;
+    padding: 1rem;
+}
