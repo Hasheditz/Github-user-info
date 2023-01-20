@@ -1,8 +1,8 @@
 body{
+    user-select: none;
     margin: 0;
     padding: 0;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    background:whitesmoke;
+    font-family:sans-serif;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -10,6 +10,25 @@ body{
     align-items: center;
     flex-direction: column;
 }
+:root{
+    --color-background : #111111;
+    --color-text1: #dfdfdf;
+    --color-card: #1e1e1e;
+    --color-else:#b689f9;
+    --color-text2:#b2becd;
+
+}
+
+
+.light-mode{
+    --color-background : #6300ed;
+    --color-text1: #dfdfdf;
+    --color-card: #1e1e1e;
+    --color-else:#b689f9;
+    --color-text2:#b2becd;
+
+}
+
 
 form{
     padding: 1rem;
@@ -36,6 +55,7 @@ main .card{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 main .card img{
     width: 40%;
@@ -48,10 +68,33 @@ main .user-info .info {
     flex-direction: row;
 
 }
-main .user-info .info p{
-    margin: 1rem;
+main .user-info .info p {
+   display: flex;
+   justify-items: center;
+   margin: 1rem;
+   padding: .4rem;
 }
-main .user-info .info .repos {
-    margin: 1rem;
-    padding: 1rem;
+main .card .avatar {
+    width: 85%;
+    border: 5px solid black;
+
 }
+main .repo{
+    text-decoration: none;
+    margin: .2rem;
+    padding: .2rem;
+}
+.theme-btn{
+    border: 1px solid red;
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }

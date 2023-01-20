@@ -1,5 +1,6 @@
 const APIURL = "https://api.github.com/users/";
 const main = document.querySelector("#main");
+const x = document.getElementById("search");
 const getuser = async(username) => {
     const response = await fetch(APIURL + username);
     const data = await response.json();
@@ -11,12 +12,11 @@ const getuser = async(username) => {
     <div class="user-info">
     <h2>${data.name}</h2>
     <p>${data.bio}</p>
-    <p>${data.company}</p>
 
     <div class="info">
-        <p>${data.followers}<strong>Followers</strong></p>
-        <p>${data.following}<strong>Following</strong></p>
-        <p>${data.public_repos}<strong>Repos</strong></p>
+        <p><strong> ${data.followers} Followers</strong></p>
+        <p><strong> ${data.following} Following</strong></p>
+        <p><strong> ${data.public_repos} Repos</strong></p>
      </div>
 
     <div id="repos">
@@ -33,4 +33,17 @@ const getuser = async(username) => {
     main.innerHTML = card;
 }
 
-getuser("getlost01")
+x.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      getuser(x.value);
+    }
+  });
+
+
+  const themeBtn = document.querySelector('.theme-btn');
+    themeBtn.addEventListener('click' , () =>{
+        let element = document.body;
+        element.classList.toggle('light-mode')
+    })
+
