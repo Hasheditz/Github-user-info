@@ -6,8 +6,8 @@ const getuser = async(username) => {
     const data = await response.json();
     console.table(data);
     const card = `
-    <div class="card"> 
-    <img class="avatar" src="${data.avatar_url}">
+    <div class="card">
+    <a href = ${data.html_url} target = __blank><img class="avatar" src="${data.avatar_url}"></a>
 </div>
     <div class="user-info">
     <h2>${data.name}</h2>
