@@ -4,7 +4,7 @@ const x = document.getElementById("search");
 const getuser = async(username) => {
     const response = await fetch(APIURL + username);
     const data = await response.json();
-    console.log(data);
+    console.table(data);
     const card = `
     <div class="card"> 
     <img class="avatar" src="${data.avatar_url}">
@@ -20,17 +20,26 @@ const getuser = async(username) => {
      </div>
 
     <div id="repos">
-        <a class="repo" href="${data.repos_url}" target="_blank">Repo1</a>
-        <a class="repo" href="#" target="_blank">Repo2</a>
-        <a class="repo" href="#" target="_blank">Repo3</a>
-        <a class="repo" href="#" target="_blank">Repo4</a>
-        <a class="repo" href="#" target="_blank">Repo5</a>
+      
     </div>
 </div>
 </div>  
     `
-
+    getrepo(username);
     main.innerHTML = card;
+}
+
+const getrepo = async(username) => {
+    const response = await fetch(APIURL + username + "/repos?created=sorted");
+    const data = await response.json();
+    console.log(data);
+    const repos = document.getElementById("repos");
+    var temp = ``;
+    for(let i = 0;i<3;++i){
+        temp +=  `<a class="repo" href="${data[i].html_url}" target="_blank">${data[i].name}</a>`
+}
+    repos.innerHTML = temp;
+    console.log(data);
 }
 
 x.addEventListener("keypress", function(event) {
